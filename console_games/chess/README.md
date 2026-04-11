@@ -8,3 +8,6 @@ Known Limitations (Roadmap)
 Currently, the project focuses on board mechanics and move validation. The following logic is not yet implemented:
 Automatic Check detection.
 Checkmate and Stalemate conditions.
+---
+Author: Valionce
+License: MIT
