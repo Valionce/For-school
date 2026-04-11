@@ -10,6 +10,6 @@ This project demonstrates the application of linear algebra in computer graphics
 - Perspective Projection: Conversion of 3D space coordinates into 2D screen space.
 - Pure Python: Developed using only standard libraries (math, time, os).
 - Object-Oriented Design: Clear separation between the mathematical model and the rendering logic.
-
+--
 Author: Valionce
 License: MIT
