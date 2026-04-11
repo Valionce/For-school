@@ -1,7 +1,5 @@
 import math
 import time
-import os
-import platform
 
 def clear_matrix_3d(matrix: list) -> None:
     for z in range(len(matrix)):
