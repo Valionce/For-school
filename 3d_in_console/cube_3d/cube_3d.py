@@ -2,6 +2,9 @@ import math
 import time
 
 def clear_matrix_3d(matrix: list) -> None:
+    '''
+    Clears the given matrix.
+    '''
     for z in range(len(matrix)):
         for y in range(len(matrix[z])):
             for x in range(len(matrix[z][y])):
@@ -23,6 +26,9 @@ class Cube:
         self.z_pos = z_pos
 
     def get_points(self) -> list:
+        '''
+        Returns a list of all points for a shape in tuple format (x, y, z).
+        '''
         points = []
         for x in range(self.x1, self.x2 + 1):
             points.append((x, self.y1, self.z1))
@@ -42,12 +48,18 @@ class Cube:
         return points
     
     def rotate(self, x: float, y: float, z: float) -> None:
+        '''
+        Rotates the figure around its original position.
+        '''
         self.angle_x += x
         self.angle_y += y
         self.angle_z += z
 
 class Drawer:
-    def draw(self, object, matrix: list, symbol: str) -> None:
+    def draw(self, object: Cube, matrix: list, symbol: str) -> None:
+        '''
+        Draws points using a rotation matrix.
+        '''
         points = object.get_points()
         width_x = 60
         height_y = 60
@@ -77,7 +89,10 @@ class Drawer:
                 matrix[z][y][x] = symbol
 
 class Printer:
-    def print_3d(self, matrix) -> None:
+    def print_3d(self, matrix: list) -> None:
+        '''
+        Outputs a 3D matrix without disturbing the order of layers.
+        '''
         width_x = len(matrix[0][0])
         height_y = len(matrix[0])
         length_z = len(matrix)
@@ -106,6 +121,9 @@ class Engine:
         self.matrix = [[['  ' for z in range(60)] for y in range(60)] for z in range(60)]
     
     def run(self) -> None:
+        '''
+        Starts all processes, acting as the main loop.
+        '''
         while True:
             clear_matrix_3d(self.matrix)
             for i in self.objects:
